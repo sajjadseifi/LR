@@ -522,7 +522,7 @@ const init_gramer = () : IGramer =>{
     const terminals = [doler,pl,pr,x,cma];
     
     //create own gramer 
-    const gm :IGramer = new Gramer(vars,terminals,"test");
+    const gm :IGramer = new Gramer(vars,terminals,"Example1");
     
     gm.add_rule(S_,S,doler);
     gm.add_rule(S,pl,L,pr);
@@ -538,7 +538,7 @@ const main = () : void => {
     //instanc LR 
     const lr0 :ILR = new LR(gm);
     lr0.init();
-    // lr0.dfa.states.map((x,i)=>console.log(i,x.items));
+    //creating table lr0
     const tbl = lr0.table();
     tbl.print();
 };
